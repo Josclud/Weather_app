@@ -55,10 +55,8 @@ $(document).ready(function () {
       card.append(cardBody)
       $('#forecast').append(card)
 
-
-    }).then(function (data) {
       console.log(data)
-      $('#forecast2').empty()
+      $('#nextDay').empty()
       // need to add specific dates
       var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
       var card = $("<div>").addClass("card");
@@ -69,8 +67,24 @@ $(document).ready(function () {
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
-      $('#forecast2').append(card)
+      $('#nextDay').append(card)
+
+      console.log(data)
+      $('#nextDay').empty()
+      // need to add specific dates
+      var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
+      var card = $("<div>").addClass("card");
+      var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[20].main.humidity + "%");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[20].main.temp + " °F");
+      var cardBody = $("<div>").addClass("card-body");
+      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[20].weather[0].icon + ".png");
+      title.append(img)
+      cardBody.append(title, humid, temp)
+      card.append(cardBody)
+      $('#nextDay').append(card)
+
     })
+
 
   }
   //set and get from local search history
