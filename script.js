@@ -4,6 +4,7 @@ $(document).ready(function () {
     var searchTerm = $('#search-value').val()
     console.log(searchTerm)
     weatherSearch(searchTerm)
+    forecast(searchTerm)
   })
 
   //first ajax call
@@ -41,6 +42,34 @@ $(document).ready(function () {
 
     }).then(function (data) {
       console.log(data)
+      $('#forecast').empty()
+      // need to add specific dates
+      var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
+      var card = $("<div>").addClass("card");
+      var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[4].main.humidity + "%");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[4].main.temp + " °F");
+      var cardBody = $("<div>").addClass("card-body");
+      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png");
+      title.append(img)
+      cardBody.append(title, humid, temp)
+      card.append(cardBody)
+      $('#forecast').append(card)
+
+
+    }).then(function (data) {
+      console.log(data)
+      $('#forecast2').empty()
+      // need to add specific dates
+      var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
+      var card = $("<div>").addClass("card");
+      var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[12].main.humidity + "%");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[12].main.temp + " °F");
+      var cardBody = $("<div>").addClass("card-body");
+      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[12].weather[0].icon + ".png");
+      title.append(img)
+      cardBody.append(title, humid, temp)
+      card.append(cardBody)
+      $('#forecast2').append(card)
     })
 
   }
