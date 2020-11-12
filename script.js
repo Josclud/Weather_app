@@ -6,7 +6,7 @@ $(document).ready(function () {
     weatherSearch(searchTerm)
     forecast(searchTerm)
   })
-
+  let searchTerm = localStorage.setItem
   //first ajax call
   function weatherSearch(searchTerm) {
     $.ajax({
