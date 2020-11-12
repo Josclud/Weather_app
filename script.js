@@ -70,7 +70,7 @@ $(document).ready(function () {
       $('#nextDay').append(card)
 
       console.log(data)
-      $('#nextDay').empty()
+      $('#day3').empty()
       // need to add specific dates
       var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
       var card = $("<div>").addClass("card");
@@ -81,8 +81,35 @@ $(document).ready(function () {
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
-      $('#nextDay').append(card)
+      $('#day3').append(card)
 
+      console.log(data)
+      $('#day4').empty()
+      // need to add specific dates
+      var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
+      var card = $("<div>").addClass("card");
+      var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[28].main.humidity + "%");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[28].main.temp + " °F");
+      var cardBody = $("<div>").addClass("card-body");
+      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[28].weather[0].icon + ".png");
+      title.append(img)
+      cardBody.append(title, humid, temp)
+      card.append(cardBody)
+      $('#day4').append(card)
+
+      console.log(data)
+      $('#day5').empty()
+      // need to add specific dates
+      var title = $("<h3>").addClass("card-title").text(data.city.name + " (" + new Date().toLocaleDateString() + ")");
+      var card = $("<div>").addClass("card");
+      var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[36].main.humidity + "%");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[36].main.temp + " °F");
+      var cardBody = $("<div>").addClass("card-body");
+      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[36].weather[0].icon + ".png");
+      title.append(img)
+      cardBody.append(title, humid, temp)
+      card.append(cardBody)
+      $('#day5').append(card)
     })
 
 
