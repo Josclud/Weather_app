@@ -11,7 +11,7 @@ $(document).ready(function () {
   //first ajax call
   function weatherSearch(searchTerm) {
     $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchTerm + "&appid=be824e900c6c4aefac235b380c87a1c8&units=imperial",
+      url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchTerm + "&appid=be824e900c6c4aefac235b380c87a1c8&units=imperial",
       method: "GET",
 
 
@@ -25,7 +25,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
       var cardBody = $("<div>").addClass("card-body");
-      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+      var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
       title.append(img)
       cardBody.append(title, temp, humid, wind)
       card.append(cardBody)
@@ -37,7 +37,7 @@ $(document).ready(function () {
   //ajax call for 5 day forecast
   function forecast(searchTerm) {
     $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchTerm + "&appid=be824e900c6c4aefac235b380c87a1c8&units=imperial",
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchTerm + "&appid=be824e900c6c4aefac235b380c87a1c8&units=imperial",
       method: "GET",
 
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[4].main.humidity + "%");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[4].main.temp + " °F");
       var cardBody = $("<div>").addClass("card-body");
-      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png");
+      var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png");
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
@@ -64,7 +64,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[12].main.humidity + "%");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[12].main.temp + " °F");
       var cardBody = $("<div>").addClass("card-body");
-      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[12].weather[0].icon + ".png");
+      var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[12].weather[0].icon + ".png");
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
@@ -78,7 +78,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[20].main.humidity + "%");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[20].main.temp + " °F");
       var cardBody = $("<div>").addClass("card-body");
-      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[20].weather[0].icon + ".png");
+      var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[20].weather[0].icon + ".png");
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
@@ -92,7 +92,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[28].main.humidity + "%");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[28].main.temp + " °F");
       var cardBody = $("<div>").addClass("card-body");
-      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[28].weather[0].icon + ".png");
+      var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[28].weather[0].icon + ".png");
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
@@ -106,7 +106,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[36].main.humidity + "%");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[36].main.temp + " °F");
       var cardBody = $("<div>").addClass("card-body");
-      var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[36].weather[0].icon + ".png");
+      var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[36].weather[0].icon + ".png");
       title.append(img)
       cardBody.append(title, humid, temp)
       card.append(cardBody)
